@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flicks</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Flicks</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Movies.html">Movies</a>
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+      <a href="#">Login</a>
+      <a class="register" href="#">Register</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="movie-strip">
+    <div class="overlay-text">
+      <!--<h1>Book Your Tickets Instantly</h1>
+      <p>find your favorite movies, pick a seat, and skip the queue</p>
+      <a href="#" class="browse-btn">Browse Movies</a>-->
+    </div>
+  </section>
+
+  <!-- Featured Movies -->
+  <section class="featured">
+    <h2>Featured Movies</h2>
+
+    <div class="carousel-container">
+      <!-- Arrow buttons -->
+      <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+
+      <!-- Scrollable track -->
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carousel-track">
+
+          <div class="movie-card">
+            <img src="images/starwar.jpg" alt="Star War" />
+            <h3>Star War</h3>
+            <p>Modern Classic</p>
+            <a href="#" class="btn">View Details</a>
+          </div>
+
+          <div class="movie-card">
+            <img src="images/avengers.jpg" alt="Avengers" />
+            <h3>Avengers</h3>
+            <p>Action</p>
+            <a href="#" class="btn">View Details</a>
+          </div>
+
+          <div class="movie-card">
+            <img src="images/lifeofpi.jpg" alt="Life of PI" />
+            <h3>Life of PI</h3>
+            <p>Drama</p>
+            <a href="#" class="btn">View Details</a>
+          </div>
+
+          <div class="movie-card">
+            <img src="images/shadowbone.jpg" alt="Shadow and Bone" />
+            <h3>Shadow and Bone</h3>
+            <p>Drama, Action, Horror</p>
+            <a href="#" class="btn">View Details</a>
+          </div>
+
+          <div class="movie-card">
+            <img src="images/inception.jpg" alt="Inception" />
+            <h3>Inception</h3>
+            <p>Sci‑Fi Thriller</p>
+            <a href="#" class="btn">View Details</a>
+          </div>
+
+          <div class="movie-card">
+            <img src="images/parasite.png" alt="Parasite" />
+            <h3>Parasite</h3>
+            <p>Thriller / Drama</p>
+            <a href="#" class="btn">View Details</a>
+          </div>
+
+          <!-- Add more movies if needed -->
+        </div>
+      </div>
+
+      <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a> | <a href="#">Contact Us</a></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function scrollCarousel(direction) {
+      const track = document.getElementById("carousel-track");
+      const scrollAmount = track.offsetWidth;
+      track.scrollLeft += direction * scrollAmount;
+    }
+  </script>
+</body>
+</html>
