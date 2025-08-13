@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Flicks</title>
+  <title>Flicks - Browse Movies</title>
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/movies.css" />
   <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">Flicks</div>
     <nav class="nav-links">
@@ -20,9 +20,53 @@
     </nav>
   </header>
 
-  <!-- Movies -->
-  <section class="featured">
-    <h2>Movies</h2>
+  <form class="movie-search-filter" onsubmit="filterMovies(); return false;">
+    <input type="text" id="searchInput" placeholder="Search by title or language..." />
+    <select id="genreSelect">
+      <option value="All">All Genres</option>
+      <option value="Action">Action</option>
+      <option value="Drama">Drama</option>
+      <option value="Horror">Horror</option>
+      <option value="Sci-Fi">Sci-Fi</option>
+      <option value="Thriller">Thriller</option>
+      <option value="Classic">Classic</option>
+    </select>
+    <button type="submit">Search</button>
+  </form>
+
+  <section class="movie-section" id="movie-section">
+  <div class="carousel-container">
+      <!-- Arrow buttons -->
+      <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+
+      <!-- Scrollable track -->
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carousel-track">
+
+    <!-- Action -->
+    <div class="genre-row" data-genre="Action">
+      <h2>Action</h2>
+      <div class="movie-grid">
+        <div class="movie-card" data-title="Avengers" data-language="English, Chinese">
+          <img src="images/avengers.jpg" alt="Avengers">
+          <h3>Avengers</h3>
+          <p>Language: English, Chinese</p>
+          <p>Genre: Action</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+        <div class="movie-card" data-title="Shadow and Bone" data-language="Hindi, Russian">
+          <img src="images/shadowbone.jpg" alt="Shadow and Bone">
+          <h3>Shadow and Bone</h3>
+          <p>Language: Hindi, Russian</p>
+          <p>Genre: Action</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+    </div><button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
 
     <div class="carousel-container">
       <!-- Arrow buttons -->
@@ -32,73 +76,111 @@
       <div class="carousel-track-wrapper">
         <div class="carousel-track" id="carousel-track">
 
-          <div class="movie-card">
-            <img src="images/starwar.jpg" alt="Star War" />
-            <h3>Star War</h3>
-            <p>Langauge: English, Hindi, Russian</p>
-            <p>Modern Classic</p>
-            <a href="#" class="btn">View Details</a>
-          </div>
-
-          <div class="movie-card">
-            <img src="images/avengers.jpg" alt="Avengers" />
-            <h3>Avengers</h3>
-            <p>Langauge: English, Chinese</p>
-            <p>Action</p>
-            <a href="#" class="btn">View Details</a>
-          </div>
-
-          <div class="movie-card">
-            <img src="images/lifeofpi.jpg" alt="Life of PI" />
-            <h3>Life of PI</h3>
-            <p>Langauge: English</p>
-            <p>Drama</p>
-            <a href="#" class="btn">View Details</a>
-          </div>
-
-          <div class="movie-card">
-            <img src="images/shadowbone.jpg" alt="Shadow and Bone" />
-            <h3>Shadow and Bone</h3>
-            <p>Langauge: Hindi, Russian</p>
-            <p>Drama, Action, Horror</p>
-            <a href="#" class="btn">View Details</a>
-          </div>
-
-          <div class="movie-card">
-            <img src="images/inception.jpg" alt="Inception" />
-            <h3>Inception</h3>
-            <p>Langauge: Russian</p>
-            <p>Sci‑Fi Thriller</p>
-            <a href="#" class="btn">View Details</a>
-          </div>
-
-          <div class="movie-card">
-            <img src="images/parasite.png" alt="Parasite" />
-            <h3>Parasite</h3>
-            <p>Langauge: English, Hindi</p>
-            <p>Thriller / Drama</p>
-            <a href="#" class="btn">View Details</a>
-          </div>
-
-          <!-- Add more movies if needed -->
+    <!-- Drama -->
+    <div class="genre-row" data-genre="Drama">
+      <h2>Drama</h2>
+      <div class="movie-grid">
+        <div class="movie-card" data-title="Life of PI" data-language="English">
+          <img src="images/lifeofpi.jpg" alt="Life of PI">
+          <h3>Life of PI</h3>
+          <p>Language: English</p>
+          <p>Genre: Drama</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+        <div class="movie-card" data-title="Parasite" data-language="English, Hindi">
+          <img src="images/parasite.png" alt="Parasite">
+          <h3>Parasite</h3>
+          <p>Language: English, Hindi</p>
+          <p>Genre: Drama</p>
+          <a href="#" class="btn">View Details</a>
         </div>
       </div>
-
-      <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
     </div>
+
+    </div>
+    </div> <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button></div>
+
+
+    <div class="carousel-container">
+      <!-- Arrow buttons -->
+      <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+
+      <!-- Scrollable track -->
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carousel-track">
+    <!-- Sci-Fi -->
+    <div class="genre-row" data-genre="Sci-Fi">
+      <h2>Sci-Fi</h2>
+      <div class="movie-grid">
+        <div class="movie-card" data-title="Inception" data-language="Russian">
+          <img src="images/inception.jpg" alt="Inception">
+          <h3>Inception</h3>
+          <p>Language: Russian</p>
+          <p>Genre: Sci-Fi</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+      </div>
+    </div>
+
+</div></div> <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button></div>
+
+<div class="carousel-container">
+      <!-- Arrow buttons -->
+      <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+
+      <!-- Scrollable track -->
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carousel-track">
+
+    <!-- Classic -->
+    <div class="genre-row" data-genre="Classic">
+      <h2>Modern Classic</h2>
+      <div class="movie-grid">
+        <div class="movie-card" data-title="Star War" data-language="English, Hindi, Russian">
+          <img src="images/starwar.jpg" alt="Star War">
+          <h3>Star War</h3>
+          <p>Language: English, Hindi, Russian</p>
+          <p>Genre: Classic</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    </div>
+      </div>
+
+    <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
+  </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a> | <a href="#">Contact Us</a></p>
   </footer>
 
-  <!-- JavaScript -->
   <script>
-    function scrollCarousel(direction) {
-      const track = document.getElementById("carousel-track");
-      const scrollAmount = track.offsetWidth;
-      track.scrollLeft += direction * scrollAmount;
+    function filterMovies() {
+      const search = document.getElementById("searchInput").value.toLowerCase();
+      const genre = document.getElementById("genreSelect").value;
+
+      document.querySelectorAll('.genre-row').forEach(row => {
+        const rowGenre = row.getAttribute('data-genre');
+        let matchFound = false;
+
+        row.querySelectorAll('.movie-card').forEach(card => {
+          const title = card.getAttribute('data-title').toLowerCase();
+          const lang = card.getAttribute('data-language').toLowerCase();
+
+          const titleMatch = title.includes(search) || lang.includes(search);
+          const genreMatch = genre === "All" || rowGenre === genre;
+
+          const visible = titleMatch && genreMatch;
+          card.style.display = visible ? "block" : "none";
+
+          if (visible) matchFound = true;
+        });
+
+        row.style.display = matchFound ? "block" : "none";
+      });
     }
   </script>
 </body>
